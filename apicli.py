@@ -47,7 +47,7 @@ def selectloop(api):
             line = line[0]
             if line:
                 snt.append(line)
-            elif not line and snt:
+            elif snt:
                 proto.writeSentence(snt[0], *snt[1:])
                 snt = []
 

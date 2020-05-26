@@ -17,13 +17,7 @@ def read(fname):
     return open(os.path.join(here, fname)).read()
 
 
-if version_info.major >= 3:
-    install_pkgs = ()
-else:
-    install_pkgs = (
-            'chainmap'
-            )
-
+install_pkgs = () if version_info.major >= 3 else 'chainmap'
 setup_pkgs = (
         'setuptools>=12.0.5',
         )

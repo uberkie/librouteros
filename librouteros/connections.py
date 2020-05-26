@@ -144,7 +144,7 @@ class ApiProtocol(Encoder, Decoder):
 
         :return: Reply word, tuple with read words.
         """
-        sentence = tuple(word for word in iter(self.readWord, b'\x00'))
+        sentence = tuple(iter(self.readWord, b'\x00'))
         self.log('--->', *sentence)
         reply_word, words = sentence[0], sentence[1:]
         if reply_word == '!fatal':
